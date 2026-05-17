@@ -1,0 +1,214 @@
+/* IMPORTS */
+@font-face {
+    font-family: 'Barlow Semi Condensed';
+    src: url(fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family:'Barlow Semi Condensed'; ;
+    src: url(fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Barlow Semi Condensed';
+    src: url(fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-SemiBold.ttf);
+    font-weight: 600;
+}
+
+
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;  /* width/height = boîte totale, pas juste le contenu */
+  margin: 0;
+  padding: 0;
+}
+
+html,body {
+  min-height: 100vh;
+}
+
+
+/* VARIABLES */
+:root {
+  /* COLORS */
+    /* PRIMARY */
+    --purple-50: hsl(260, 100%, 95%);
+    --purple-300: hsl(264, 82%, 80%);
+    --purple-500: hsl(263, 55%, 52%);
+
+    /* NEUTRAL */
+    --white: hsl(0, 0%, 100%);
+    --grey-100: hsl(214, 17%, 92%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue: hsl(219, 29%, 14%);
+    --black: hsl(0, 0%, 7%); 
+
+  /* TYPOGRAPHY */
+
+    /* FONT FAMILIES */
+    --ff-primary: 'Barlow Semi Condensed', sans-serif;
+
+    /* FONT SIZES */
+    --fs-regular: 0.6875rem;
+    --fs-medium: 0.75rem;
+    --fs-large: 1rem;
+    --fs-xlarge: 1.25rem;
+
+    /* FONT WEIGHTS */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semi-bold: 600;
+    
+  /* SPACING */
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+    
+  /* RADIUS */
+  --radius-sm: 0.5rem;
+
+  /* SHADOW */
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+ }
+
+/* BASE */
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: var(--fs-regular);
+  line-height: 1.4;
+  color: hsl(217, 19%, 35%);
+  background: hsl(210, 46%, 95%);
+}
+
+/* LAYOUT */
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.testimonial-layout{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+
+    padding: var(--spacing-xxl) var(--spacing-lg);
+}
+
+.testimonial{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial--purple {
+    background: var(--purple-500);
+    color: var(--white);
+}
+
+.testimonial--gray {
+    background: var(--grey-500);
+    color: var(--white);
+}
+
+.testimonial--blue {
+    background: var(--dark-blue);
+    color: var(--white);
+}
+
+.testimonial--white {
+    background: var(--white);
+}
+
+.testimonial__header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.testimonial__avatar {
+    font-weight: var(--fw-semi-bold);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial--purple .testimonial__avatar{
+    color: var(--purple-500);
+}
+
+.testimonial--gray .testimonial__avatar{
+    color: var(--grey-500);
+}
+
+.testimonial--white .testimonial__avatar{
+    background-color: var(--grey-500);
+    color: var(--white);
+}
+
+.testimonial--blue .testimonial__avatar{
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+.testimonial__name{
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-regular);
+}
+
+.testimonial__status {
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-regular);
+}
+.testimonial__title {
+    font-size: var(--fs-large);
+    font-weight: var(--fw-semi-bold);
+}
+
+.testimonial__quote {
+    font-weight: var(--fw-regular);
+}
+
+/* RESPONSIVE */
+@media (min-width: 1024px) {
+    .testimonial-layout {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+
+        max-width: 1024px;
+    }
+
+    .testimonial--purple {
+        grid-column: span 2;
+    }
+
+    .testimonial--blue {
+        grid-column: span 2;
+    }
+
+    .testimonial--white-tall {
+        grid-column: 4;
+        grid-row: 1 / 3;
+    }
+
+
+}

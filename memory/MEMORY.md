@@ -1,0 +1,2 @@
+- [Heading hierarchy preference](feedback_heading_hierarchy.md) — user prefers semantic hierarchy over visual hierarchy when picking h2/h3 levels
+- [No representation of living beings](user_no_living_beings.md) — avoid suggesting images of people/animals; propose abstract alternatives instead
