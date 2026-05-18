@@ -1,18 +1,12 @@
 /* IMPORTS */
 @font-face {
     font-family: 'Barlow Semi Condensed';
-    src: url(fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Light.ttf);
-    font-weight: 300;
-}
-@font-face {
-    font-family: 'Barlow Semi Condensed';
     src: url(fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Barlow Semi Condensed';
-    ;
     src: url(fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Medium.ttf);
     font-weight: 500;
 }
@@ -29,7 +23,6 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    /* width/height = boîte totale, pas juste le contenu */
     margin: 0;
     padding: 0;
 }
@@ -47,7 +40,6 @@ body {
 
     /* PRIMARY */
     --purple-50: hsl(260, 100%, 95%);
-    --purple-300: hsl(264, 82%, 80%);
     --purple-500: hsl(263, 55%, 52%);
 
     /* NEUTRAL */
@@ -57,7 +49,6 @@ body {
     --grey-400: hsl(224, 10%, 45%);
     --grey-500: hsl(217, 19%, 35%);
     --dark-blue: hsl(219, 29%, 14%);
-    --black: hsl(0, 0%, 7%);
 
     /* TYPOGRAPHY */
 
@@ -68,10 +59,8 @@ body {
     --fs-regular: 0.6875rem;
     --fs-medium: 0.75rem;
     --fs-large: 1rem;
-    --fs-xlarge: 1.25rem;
 
     /* FONT WEIGHTS */
-    --fw-light: 300;
     --fw-regular: 400;
     --fw-medium: 500;
     --fw-semi-bold: 600;
@@ -127,8 +116,6 @@ main {
     padding: var(--spacing-lg);
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow);
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial--purple {
@@ -193,7 +180,8 @@ main {
 
 .testimonial__status {
     font-size: var(--fs-regular);
-    font-weight: var(--fw-light);
+    font-weight: var(--fw-medium);
+    opacity: 0.9;
 }
 
 .testimonial__title {
@@ -202,11 +190,11 @@ main {
 }
 
 .testimonial--purple .testimonial__title,
-.testimonial--gray .testimonial__title{
+.testimonial--gray .testimonial__title {
     color: var(--white);
 }
-.testimonial--white .testimonial__title
-{
+
+.testimonial--white .testimonial__title {
     color: var(--grey-500);
 }
 
@@ -215,7 +203,7 @@ main {
 }
 
 /* RESPONSIVE */
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
     .testimonial-layout {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -239,6 +227,4 @@ main {
         grid-column: 4;
         grid-row: 1 / 3;
     }
-
-
 }
